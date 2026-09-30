@@ -1,4 +1,4 @@
-# Dictionary mappings for advice
+# Dictionary mappings for advice and suggestions
 SEASON_ADVICE = {
     "summer": "Water your plants regularly and provide some shade.\n",
     "winter": "Protect your plants from frost with covers.\n"
@@ -9,6 +9,11 @@ PLANT_ADVICE = {
     "vegetable": "Keep an eye out for pests!"
 }
 
+PLANT_SUGGESTIONS = {
+    "summer": "Sunflowers, Tomatoes, and Zinnias thrive in summer.",
+    "winter": "Pansies, Kale, and Winter Jasmine thrive in winter."
+}
+
 def get_season_advice(season):
     """Return gardening advice based on the season."""
     return SEASON_ADVICE.get(season, "No advice for this season.\n")
@@ -17,9 +22,15 @@ def get_plant_advice(plant_type):
     """Return gardening advice based on the plant type."""
     return PLANT_ADVICE.get(plant_type, "No advice for this type of plant.")
 
+def get_plant_suggestions(season):
+    """Return plant suggestions based on the season."""
+    return PLANT_SUGGESTIONS.get(season, "No plant suggestions available.")
+
 def generate_advice(season, plant_type):
-    """Combine season and plant advice into a single message."""
-    return get_season_advice(season) + get_plant_advice(plant_type)
+    """Combine season, plant advice, and suggestions into a single message."""
+    advice = get_season_advice(season) + get_plant_advice(plant_type)
+    advice += f"\n\nSuggested plants for {season}: {get_plant_suggestions(season)}"
+    return advice
 
 # Main program
 if __name__ == "__main__":
