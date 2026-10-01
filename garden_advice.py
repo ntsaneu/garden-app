@@ -1,3 +1,10 @@
+# Garden Advice App
+# TODO / CHANGE LOG
+# 2024-05-24: Replaced hardcoded values with input() (Issue #1)
+# 2024-05-24: Refactored code into functions and added docstrings (Issue #2)
+# 2024-05-24: Refactored advice storage to use dictionaries (Issue #3)
+# 2024-05-24: Added plant suggestions based on season (Issue #4)
+
 # Dictionary mappings for advice and suggestions
 SEASON_ADVICE = {
     "summer": "Water your plants regularly and provide some shade.\n",
